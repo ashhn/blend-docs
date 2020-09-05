@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@blend-ui/core": "0.1.14-alpha.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -16,7 +17,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "build-storybook-docs": "build-storybook --docs",
+    "storybook-docs": "start-storybook --docs"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -34,11 +37,16 @@
     ]
   },
   "devDependencies": {
-    "@storybook/react": "^6.0.21",
+    "@babel/core": "^7.11.5",
     "@storybook/addon-actions": "^6.0.21",
+    "@storybook/addon-controls": "^6.0.21",
+    "@storybook/addon-docs": "^6.0.21",
+    "@storybook/addon-knobs": "^6.0.21",
     "@storybook/addon-links": "^6.0.21",
     "@storybook/addons": "^6.0.21",
-    "@babel/core": "^7.11.5",
-    "babel-loader": "^8.1.0"
+    "@storybook/react": "^6.0.21",
+    "@styled-system/prop-types": "^5.1.5",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-remove-export-keywords": "^1.6.16"
   }
 }
