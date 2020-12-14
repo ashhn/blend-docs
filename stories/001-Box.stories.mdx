@@ -6,16 +6,10 @@ import {
   ColorArgType,
   BorderArgType,
 } from "./shared/styledProps";
+import { ColorStylesArgType } from "./shared/themeProps";
 
 export const boxArgTypes = {
-  colorStyle: {
-    name: "colorStyle",
-    description: "Color style pair from theme",
-    type: { name: "string", required: false },
-    control: {
-      type: null,
-    },
-  },
+  ...ColorStylesArgType,
   ...SpaceArgType,
   ...LayoutArgType,
 };
