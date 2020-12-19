@@ -1,0 +1,26 @@
+import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
+import { Grid, Cell } from "@blend-ui/core";
+import { Space, Color, Layout, Border } from "./shared/styledSystem";
+
+<Meta
+  title="Core|Layout/Grid"
+  component={Grid}
+  parameters={{ options: { showPanel: false } }}
+/>
+
+# Grid
+
+A low-level grid layout component for setting width, margin, padding, and color
+
+<Preview withToolbar>
+  <Story name="Default">
+    <Grid width={1} direction={"column"}>
+      <Cell xs={6} p={3} color="white" bg="blue">
+        Hello
+      </Cell>
+      <Cell xs={6} p={3} mt={2} color="primary">
+        Hello
+      </Cell>
+    </Grid>
+  </Story>
+</Preview>
