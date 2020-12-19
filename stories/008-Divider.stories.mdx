@@ -1,0 +1,35 @@
+import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
+import { Divider } from "@blend-ui/core";
+import { Space, Color, Border } from "./shared/styledSystem";
+
+<Meta
+  title="Core/Layout/Divider"
+  component={Divider}
+  parameters={{ options: { showPanel: false } }}
+/>
+
+# Divider
+
+Simple styled divider component that supports a number of the styled-system props.
+
+<Preview withToolbar>
+  <Story name="Default <hr> element">
+    <Divider m={3} />
+  </Story>
+</Preview>
+
+### Variations
+
+`variation={"div"}`
+
+<Preview withToolbar>
+  <Story name="Non-blocking Divider using border">
+    <Divider variation={"div"} m={3} color={"darkGray"} borderWidth={"5px"} />
+  </Story>
+</Preview>
+
+## **Resources**
+
+- <Space />
+- <Color />
+- <Border />

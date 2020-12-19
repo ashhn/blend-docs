@@ -1,0 +1,54 @@
+import { Meta, Story, Props, Preview } from "@storybook/addon-docs/blocks";
+import { withKnobs, select, boolean } from "@storybook/addon-knobs";
+import { variations, sizes, colors } from "./shared/buttons";
+import { Button } from "@blend-ui/core";
+
+<Meta
+  title="Button"
+  component={Button}
+  parameters={{ options: { showPanel: true } }}
+/>
+
+# Button
+
+<Preview withToolbar>
+  <Story name="Standard">
+    <Button variation={"fill"} size={"medium"} color={"primary"}>
+      BUTTON
+    </Button>
+  </Story>
+</Preview>
+
+<Props of={Button} />
+
+### Variations
+
+<Story name="Button Variations">
+  <div>
+    <Button variation={"fill"} size={"large"} color={"primary"}>
+      BUTTON
+    </Button>
+    <Button variation={"outline"} size={"large"} color={"primary"}>
+      BUTTON
+    </Button>
+    <Button variation={"link"} size={"large"} color={"primary"}>
+      BUTTON
+    </Button>
+  </div>
+</Story>
+
+### Playground
+
+Experiment with this story with Knobs addon in Canvas mode.
+
+<Story name="Button Knobs" parameters={{ decorators: [withKnobs] }}>
+  <Button
+    fullWidth={boolean("Full Width?", false)}
+    disabled={boolean("Disabled?", false)}
+    variation={select("Variation", variations, "fill")}
+    size={select("Size", sizes, "medium")}
+    color={select("Color", colors, "primary")}
+  >
+    Button
+  </Button>
+</Story>

@@ -1,0 +1,29 @@
+import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
+import { Cell } from "@blend-ui/core";
+import { Space, Color, Border } from "./shared/styledSystem";
+
+<Meta
+  title="Core|Forms/Cell"
+  component={Cell}
+  parameters={{ options: { showPanel: false } }}
+/>
+
+# Cell
+
+Simple styled label component that supports a number of the styled-system props.
+
+<Preview withToolbar>
+  <Story name="Default">
+    <Cell m={3}>Cell Component</Cell>
+  </Story>
+</Preview>
+
+# Props should be here...
+
+<Props of={Label} />
+
+## **Resources**
+
+- <Space />
+- <Color />
+- <Border />
