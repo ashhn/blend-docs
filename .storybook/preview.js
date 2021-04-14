@@ -1,45 +1,24 @@
 import React from "react";
-//import { addDecorator } from '@storybook/react';
+import { addDecorator } from "@storybook/react";
+import { createGlobalStyle } from "styled-components";
 
-import { addDecorator, addParameters } from "@storybook/react";
-//import { withInfo } from '@storybook/addon-info';
+import { baseStyles, ThemeProvider } from "@blend-ui/core";
 
-//import { addParameters } from '@storybook/react';
-import { DocsPage, DocsContainer } from "@storybook/addon-docs/blocks";
-import { ThemeProvider } from "@blend-ui/core";
+const GlobalStyle = createGlobalStyle`
+  body {
+   ${baseStyles};
+  }
+ 
+`;
 
-//import { DocsPage } from 'storybook-addon-deps/blocks/DocsPage';
-//import { DocsPage } from 'storybook-addon-deps/blocks';
-//addParameters({ docs: { page: DocsPage } });
+const themeProviderDecorator = (story) => {
+  //console.log("STYLES ", GlobalStyle);
 
-/// Root behavious will change
-/// https://github.com/storybookjs/storybook/blob/master/MIGRATION.md#simplified-hierarchy-separators
-
-addParameters({
-  /*options: {
-      showRoots: true,
-    },
-    */
-  docs: {
-    container: DocsContainer,
-    page: DocsPage,
-  },
-});
-const themeProviderDecorator = (story) => (
-  <ThemeProvider>
-    <React.Fragment>{story()}</React.Fragment>
-  </ThemeProvider>
-);
-
-addDecorator(themeProviderDecorator);
-/*
-import { ThemeProvider, Box } from 'core'
-
-const themeProviderDecorator = story => (
+  return (
     <ThemeProvider>
-        <Box px={5}>{story()}</Box>
+      <GlobalStyle />
+      {story()}
     </ThemeProvider>
-)
-
+  );
+};
 addDecorator(themeProviderDecorator);
-*/

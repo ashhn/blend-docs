@@ -3,7 +3,7 @@ import { Divider } from "@blend-ui/core";
 import { Space, Color, Border } from "./shared/styledSystem";
 
 <Meta
-  title="Core|Layout/Divider"
+  title="Core/Divider"
   component={Divider}
   parameters={{ options: { showPanel: false } }}
 />
@@ -14,7 +14,7 @@ Simple styled divider component that supports a number of the styled-system prop
 
 <Preview withToolbar>
   <Story name="Default <hr> element">
-    <Divider />
+    <Divider foo={"bar"} height={"5px"} ml={3} color={"red"} />
   </Story>
 </Preview>
 
@@ -25,6 +25,15 @@ Simple styled divider component that supports a number of the styled-system prop
 <Preview withToolbar>
   <Story name="Non-blocking Divider using border">
     <Divider variation={"div"} m={3} color={"darkGray"} borderWidth={"5px"} />
+  </Story>
+  <Story name="Divider Variation">
+    <Divider as={"div"} color={"green"} height={"5px"} ml={3} />
+  </Story>
+  <Story name="Divider theme color">
+    <Divider as={"div"} height={"5px"} />
+  </Story>
+  <Story name="Title Divider">
+    <Divider as={"div"}>Text title</Divider>
   </Story>
 </Preview>
 

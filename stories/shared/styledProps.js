@@ -53,6 +53,21 @@ export const BorderArgType = {
     },
   },
 };
+
+export const GridArgType = {
+  border: {
+    name: "layout",
+    description:
+      "Styled systems dynamic border props <br> <a href='https://styled-system.com/api#border' target='_blank'>Styled-system border</a>",
+    type: {
+      name: "string",
+    },
+    control: {
+      type: null,
+    },
+  },
+};
+
 /*
 
 

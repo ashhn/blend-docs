@@ -15,7 +15,7 @@ export const boxArgTypes = {
 };
 console.log("AGRS ", boxArgTypes);
 
-<Meta title="Core|Layout/Image" component={Image} />
+<Meta title="Core/Image" component={Image} />
 
 # Image
 
@@ -23,7 +23,14 @@ A low-level layout component for setting width, margin, padding, and color
 
 <Canvas withToolbar>
   <Story name="Default" argTypes={boxArgTypes}>
-    {(args) => <Image />}
+    {(args) => (
+      <Image
+        src={"https://picsum.photos/200/200"}
+        alt={"Image"}
+        shape={"square"}
+        width={300}
+      />
+    )}
   </Story>
 </Canvas>
 
