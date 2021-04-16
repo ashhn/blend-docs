@@ -15,17 +15,37 @@ export const boxArgTypes = {
 };
 console.log("AGRS ", boxArgTypes);
 
-<Meta title="Core|Layout/Text" component={Text} />
+<Meta title="Core/Text" component={Text} />
 
 # Text
 
 A low-level layout component for setting width, margin, padding, and color
 
 <Canvas withToolbar>
-  <Story name="Default" argTypes={boxArgTypes}>
-    {(args) => <Text />}
+  <Story name="Basic" argTypes={boxArgTypes}>
+    {(args) => (
+      <Text bold italic m={10}>
+        Bold and Italic
+      </Text>
+    )}
   </Story>
 </Canvas>
+
+### Variations
+
+<Story name="Text Variations">
+  <Text m={10} $fontSize={"md"} textStyle={"body"}>
+    TextStyle body
+  </Text>
+  <Text bold italic m={10}>
+    Bold and Italic
+  </Text>
+  <Text fontSize={"lg"}>Font size LG</Text>
+  <Text m={10} $fontSize={"md"} textStyle={"body"} colorStyle={"error"}>
+    TextStyle body + colorStyle error
+  </Text>
+  <Text textStyle={"h6"}>TextStyle h6</Text>
+</Story>
 
 <ArgsTable story="Default" />
 

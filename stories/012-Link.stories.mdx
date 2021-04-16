@@ -15,7 +15,7 @@ export const boxArgTypes = {
 };
 console.log("AGRS ", boxArgTypes);
 
-<Meta title="Core|Layout/Link" component={Link} />
+<Meta title="Core/Link" component={Link} />
 
 # Link
 
@@ -23,7 +23,11 @@ A low-level layout component for setting width, margin, padding, and color
 
 <Canvas withToolbar>
   <Story name="Default" argTypes={boxArgTypes}>
-    {(args) => <Link />}
+    {(args) => (
+      <Link href={"#"} target={"_blank"} fontSize={"20px"}>
+        Something
+      </Link>
+    )}
   </Story>
 </Canvas>
 

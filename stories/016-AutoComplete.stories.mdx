@@ -1,10 +1,13 @@
 import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
-import { AutoComplete } from "@blend-ui/core";
+import { AutoComplete, Text } from "@blend-ui/core";
 import {
   SpaceArgType,
   LayoutArgType,
   ColorArgType,
   BorderArgType,
+  list,
+  showList,
+  activeItem,
 } from "./shared/styledProps";
 import { ColorStylesArgType } from "./shared/themeProps";
 
@@ -12,10 +15,11 @@ export const boxArgTypes = {
   ...ColorStylesArgType,
   ...SpaceArgType,
   ...LayoutArgType,
+  list,
 };
 console.log("AGRS ", boxArgTypes);
 
-<Meta title="Core|Layout/AutoComplete" component={AutoComplete} />
+<Meta title="Core/AutoComplete" component={AutoComplete} />
 
 # AutoComplete
 
@@ -23,7 +27,7 @@ A low-level layout component for setting width, margin, padding, and color
 
 <Canvas withToolbar>
   <Story name="Default" argTypes={boxArgTypes}>
-    {(args) => <AutoComplete />}
+    {(args) => <AutoComplete suggestions={list} />}
   </Story>
 </Canvas>
 

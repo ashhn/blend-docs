@@ -1,11 +1,29 @@
-import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
-import { Grid, Cell } from "@blend-ui/core";
+import { Meta, Story, Props, Preview } from "@storybook/addon-docs/blocks";
 import { Space, Color, Layout, Border } from "./shared/styledSystem";
 
+import { Flex, Text } from "@blend-ui/core";
+import { CssGrid as Grid, CssCell as Cell } from "@blend-ui/css-grid";
+
+import { ColorStylesArgType } from "./shared/themeProps";
+
+import {
+  SpaceArgType,
+  LayoutArgType,
+  ColorArgType,
+  BorderArgType,
+} from "./shared/styledProps";
+
+export const boxArgTypes = {
+  ...ColorStylesArgType,
+  ...SpaceArgType,
+  ...LayoutArgType,
+};
+export default { title: "Grid" };
+
 <Meta
-  title="Core|Layout/Grid"
+  title="Core/Grid"
   component={Grid}
-  parameters={{ options: { showPanel: false } }}
+  parameters={{ options: { showPanel: true } }}
 />
 
 # Grid
@@ -13,14 +31,31 @@ import { Space, Color, Layout, Border } from "./shared/styledSystem";
 A low-level grid layout component for setting width, margin, padding, and color
 
 <Preview withToolbar>
-  <Story name="Default">
-    <Grid width={1} direction={"column"}>
-      <Cell xs={6} p={3} color="white" bg="blue">
-        Hello
-      </Cell>
-      <Cell xs={6} p={3} mt={2} color="primary">
-        Hello
+  <Story name="Standard">
+    <Grid direction="column" justify="center" minHeight="100vh">
+      <Cell xs={12} textAlign="center" justify="center">
+        <Flex p={2} border={"2px solid"} borderRadius={4} width="200px">
+          <Text>Center this</Text>
+        </Flex>
       </Cell>
     </Grid>
   </Story>
 </Preview>
+
+<Props of={Grid} />
+
+### Variations
+
+<Story name="Grid Variations">
+  <Grid direction="column" justify="center" minHeight="100vh">
+    <Cell xs={12} textAlign="center" justify="center">
+      <Flex p={2} border={"2px solid"} borderRadius={4} width="200px">
+        <Text>Center this</Text>
+      </Flex>
+    </Cell>
+  </Grid>
+  <Grid direction={"column"}>
+    <Cell xs={3}>Cell 1</Cell>
+    <Cell xs={6}>Cell 2</Cell>
+  </Grid>
+</Story>
