@@ -1,0 +1,35 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { Box } from "@blend-ui/core";
+import { Space, Color,Layout, Border } from './shared/styledSystem';
+
+<Meta title="Core|Layout/Box" component={Box} parameters={{ options: { showPanel: false } }} />
+
+# Box
+
+A low-level layout component for setting width, margin, padding, and color
+
+<Preview withToolbar>
+<Story name="Default">
+<Box>
+      <Box p={3} color="white" bg="blue">
+        Hello
+      </Box>
+      <Box p={3} mt={2} color="primary">
+        Hello
+      </Box>
+      <Box p={3} mt={2} color="error">
+        Hello
+      </Box>
+      <Box p={3} mt={2} color="warning">
+        Hello
+      </Box>
+</Box>
+</Story>
+</Preview>
+
+
+## **Resources**
+- <Space />
+- <Layout />
+- <Color />
+- <Border />

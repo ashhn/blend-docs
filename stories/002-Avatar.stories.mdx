@@ -1,30 +1,27 @@
-import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
-import { Avatar } from "@blend-ui/core";
+import { Meta, Story, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
 import {
-  SpaceArgType,
-  LayoutArgType,
-  ColorArgType,
-  BorderArgType,
-} from "./shared/styledProps";
-import { ColorStylesArgType } from "./shared/themeProps";
+  withKnobs,
+  select,
+  boolean,
+  text,
+  number,
+} from "@storybook/addon-knobs";
 
-export const boxArgTypes = {
-  ...ColorStylesArgType,
-  ...SpaceArgType,
-  ...LayoutArgType,
-};
-console.log("AGRS ", boxArgTypes);
+import { Avatar } from "demo-blend-ui/core";
 
-<Meta title="Core/Avatar" component={Avatar} />
+<Meta title="Core/Avatar" component={Avatar} decorators={[withKnobs]} />
 
 # Avatar
 
-A low-level layout component for setting width, margin, padding, and color
+We can even preview multiple stories in a block. This
+gets rendered as a group, but defines individual stories
+with unique URLs and isolated snapshot tests.
 
-<Canvas withToolbar>
-  <Story name="Basic" argTypes={boxArgTypes}>
+<Canvas>
+  <Story name="Image Avatar">
     {(args) => (
       <Avatar
+        {...args}
         src={"https://i.pravatar.cc/100"}
         alt={"photo"}
         width={100}
@@ -33,13 +30,25 @@ A low-level layout component for setting width, margin, padding, and color
           margin: "15px",
           filter: "drop-shadow(0px 4px 8px rgba(91, 92, 91, 0.25))",
         }}
+        outerCircle
+      />
+    )}
+  </Story>
+  <Story name="Initials Avatar">
+    {(args) => (
+      <Avatar
+        {...args}
+        width={100}
+        effect={{ hover: { width: 110, fontWeight: 600 } }}
       />
     )}
   </Story>
 </Canvas>
 
-<ArgsTable story="Basic" />
-
-## **Resources**
-
-- [Styled-system API](https://styled-system.com/api)
+<Story name="Avatar Knobs" parameters={{ decorators: [withKnobs] }}>
+  <Avatar
+    width={100}
+    initials={"TA"}
+    outerCircle={boolean("Outer Circle", false)}
+  />
+</Story>

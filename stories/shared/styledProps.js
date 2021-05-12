@@ -68,9 +68,9 @@ export const GridArgType = {
   },
 };
 
+export const ButtonArgTypes = {};
+
 /*
-
-
 export const Space=()=>{
 
     //return "- [Styled-system space](https://styled-system.com/api#space)"

@@ -1,6 +1,6 @@
 import React from "react";
 //import { useTheme } from "./theme/ThemeProvider";
-import { colorStyles } from "@blend-ui/core";
+import { colorStyles } from "demo-blend-ui/core";
 //console.log("THEME ", colorStyles);
 //console.log("THEME ", ThemeProvider);
 

@@ -1,0 +1,45 @@
+{
+  "name": "@blend-ui/docs",
+  "version": "1.0.5",
+  "description": "Accordion compoment",
+  "author": "Tero <tero@prifina.com>",
+  "license": "MIT",
+  "main": "dist/esm/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build:esm": "cross-env NODE_ENV=production BABEL_ENV=esm babel ./src --out-dir ./dist/esm",
+    "build:cjs": "cross-env NODE_ENV=production BABEL_ENV=cjs babel ./src --out-dir ./dist/cjs",
+    "build:es": "cross-env NODE_ENV=production BABEL_ENV=es babel ./src --out-dir ./dist/es",
+    "storybook": "start-storybook",
+    "build-storybook": "build-storybook -s public",
+    "publish-storybook": "aws s3 sync storybook-static/ s3://prifina-blend"
+  },
+  "dependencies": {
+    "@blend-ui/core": "^1.0.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "@babel/preset-react": "^7.9.4",
+    "@storybook/addon-actions": "^5.3.18",
+    "@storybook/addon-docs": "^5.3.19",
+    "@storybook/addon-knobs": "^5.3.19",
+    "@storybook/addon-links": "^5.3.19",
+    "@storybook/react": "^5.3.18",
+    "@storybook/theming": "^5.3.19",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-react-docgen": "^4.1.0",
+    "react-is": "^16.13.1"
+  },
+  "peerDependencies": {
+    "react": "^15.0.0 || ^16.0.0",
+    "react-dom": "^15.0.0 || ^16.0.0"
+  }
+}

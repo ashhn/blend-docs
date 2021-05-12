@@ -8,7 +8,7 @@ import {
   ThemeProvider,
   theme,
   createTheme,
-} from "demo-blend-ui/core";
+} from "@blend-ui/core";
 
 function splitArrayIntoChunks(arr, chunkLen) {
   var chunkList = [];
@@ -58,7 +58,7 @@ const PaletteRow = ({ listIndex, colors, colorKey }) => {
     </React.Fragment>
   );
 };
-export const ThemeColors = ({ colorRows, colors }) => {
+const ThemeColors = ({ colorRows, colors }) => {
   return (
     <Grid width={1} p={3} direction={"column"}>
       {colorRows.map((color, i) => (

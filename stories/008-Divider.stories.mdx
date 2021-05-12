@@ -1,6 +1,20 @@
 import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
-import { Divider } from "@blend-ui/core";
+import { Divider } from "demo-blend-ui/core";
 import { Space, Color, Border } from "./shared/styledSystem";
+
+import {
+  SpaceArgType,
+  LayoutArgType,
+  ColorArgType,
+  BorderArgType,
+} from "./shared/styledProps";
+import { ColorStylesArgType } from "./shared/themeProps";
+
+export const boxArgTypes = {
+  ...ColorStylesArgType,
+  ...SpaceArgType,
+  ...LayoutArgType,
+};
 
 <Meta
   title="Core/Divider"
@@ -13,8 +27,10 @@ import { Space, Color, Border } from "./shared/styledSystem";
 Simple styled divider component that supports a number of the styled-system props.
 
 <Preview withToolbar>
-  <Story name="Default <hr> element">
-    <Divider foo={"bar"} height={"5px"} ml={3} color={"red"} />
+  <Story name="Default <hr> element" argTypes={boxArgTypes}>
+    {(args) => (
+      <Divider {...args} foo={"bar"} height={"5px"} ml={3} color={"red"} />
+    )}
   </Story>
 </Preview>
 

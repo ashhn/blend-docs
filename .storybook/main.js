@@ -13,26 +13,6 @@ module.exports = {
       },
     },
     "@storybook/addon-controls",
+    "@storybook/addon-backgrounds",
   ],
 };
-/*   
-'../../core/stories/*.stories.mdx'
-(js|mdx)
-module.exports = {
-    stories: ['../src/strories/*.stories.[tj]s'],
-    };
-    
-
-    module.exports = {
-  addons: [
-    {
-      name: '@storybook/addon-docs',
-      options: {
-        configureJSX: true,
-        babelOptions: {},
-        sourceLoaderOptions: null,
-      },
-    },
-  ],
-};
- */

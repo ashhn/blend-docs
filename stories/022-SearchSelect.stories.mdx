@@ -1,11 +1,14 @@
 import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
-import { withKnobs, select, boolean } from "@storybook/addon-knobs";
-import { Image } from "demo-blend-ui/core";
+import { Select, SearchSelect, Box, Label } from "demo-blend-ui/core";
+
 import {
   SpaceArgType,
   LayoutArgType,
   ColorArgType,
   BorderArgType,
+  boxRef,
+  selectOptions,
+  changeAction,
 } from "./shared/styledProps";
 import { ColorStylesArgType } from "./shared/themeProps";
 
@@ -16,35 +19,24 @@ export const boxArgTypes = {
 };
 console.log("AGRS ", boxArgTypes);
 
-<Meta title="Core/Image" component={Image} />
+<Meta title="Core/SearchSelect" component={SearchSelect} />
 
-# Image
+# Select
 
 A low-level layout component for setting width, margin, padding, and color
 
 <Canvas withToolbar>
   <Story name="Default" argTypes={boxArgTypes}>
     {(args) => (
-      <Image
-        src={"https://picsum.photos/200/200"}
-        alt={"Image"}
-        shape={"square"}
-        width={300}
-      />
+      <Box>
+        <Label htmlFor="cabinClass">Cabin Class</Label>
+        <SearchSelect id="cabinClass" name="cabinClass" />
+      </Box>
     )}
   </Story>
 </Canvas>
 
 <ArgsTable story="Default" />
-
-<Story name="Image Knobs" parameters={{ decorators: [withKnobs] }}>
-  <Image
-    src={"https://picsum.photos/200/200"}
-    alt={"Image"}
-    width={300}
-    shape={select("Initials", "square")}
-  />
-</Story>
 
 ## **Resources**
 

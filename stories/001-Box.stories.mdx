@@ -1,14 +1,12 @@
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
+import { Box, boxRef } from "demo-blend-ui/core";
 import {
-  Meta,
-  Story,
-  Canvas,
-  Preview,
-  ArgsTable,
-} from "@storybook/addon-docs/blocks";
-
-import { Knobs } from "@storybook/addon-docs/knobs";
-
-import { Box } from "@blend-ui/core";
+  withKnobs,
+  select,
+  boolean,
+  text,
+  number,
+} from "@storybook/addon-knobs";
 import {
   SpaceArgType,
   LayoutArgType,
@@ -22,36 +20,63 @@ export const boxArgTypes = {
   ...SpaceArgType,
   ...LayoutArgType,
 };
+console.log("AGRS ", boxArgTypes);
 
-<Meta
-  title="Core|Layout/Box"
-  component={Box}
-  parameters={{ options: { showPanel: false } }}
-/>
+<Meta title="Core/Box" component={Box} />
 
-# Box
+# Link
 
 A low-level layout component for setting width, margin, padding, and color
 
-<Preview withToolbar>
+<Canvas withToolbar>
   <Story name="Default" argTypes={boxArgTypes}>
-    {(args) => (<Box/>)}
-     <Box
+    {(args) => (
+      <Box
+        {...args}
+        width={[1 / 2]}
+        height={"100px"}
+        border={"1px solid"}
+        borderRadius={4}
+        p={2}
+        ref={boxRef}
+        foo={"bar"}
+      >
+        Something with Ref
+      </Box>
+    )}
+  </Story>
+</Canvas>
+
+<Preview withToolbar>
+  <Story name="Colors">
+    <Box>
+      <Box p={3} color="white" bg="blue">
+        Hello
+      </Box>
+      <Box p={3} mt={2} color="primary">
+        Hello
+      </Box>
+      <Box p={3} mt={2} color="error">
+        Hello
+      </Box>
+      <Box p={3} mt={2} color="warning">
+        Hello
+      </Box>
+    </Box>
+  </Story>
+</Preview>
+
+<ArgsTable story="Default" />
+
+<Story name="Box Knobs" parameters={{ decorators: [withKnobs] }}>
+  <Box
     width={[1 / 2]}
     height={"100px"}
     border={"1px solid"}
     borderRadius={4}
-    p={2}
-    ref={boxRef}
-    foo={"bar"}
-  >
-    Something with Ref
-  </Box>
-  </Story>
-<Preview withToolbar>
-<Knobs>
-
-<ArgsTable story="Default" />
+    bg={select("Color", "blue, red")}
+  />
+</Story>
 
 ## **Resources**
 

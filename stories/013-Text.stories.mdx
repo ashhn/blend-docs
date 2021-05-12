@@ -1,5 +1,7 @@
 import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
-import { Text } from "@blend-ui/core";
+import { Text } from "demo-blend-ui/core";
+import { withKnobs, select, boolean, text } from "@storybook/addon-knobs";
+
 import {
   SpaceArgType,
   LayoutArgType,
@@ -48,6 +50,12 @@ A low-level layout component for setting width, margin, padding, and color
 </Story>
 
 <ArgsTable story="Default" />
+
+<Story name="Text Knobs" parameters={{ decorators: [withKnobs] }}>
+  <Text fontSize={select("fonts", "md")} as={select("as", "b")}>
+    dsaasd{" "}
+  </Text>
+</Story>
 
 ## **Resources**
 

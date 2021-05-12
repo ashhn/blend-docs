@@ -1,38 +1,131 @@
 import { Meta, Story, Props, Preview } from "@storybook/addon-docs/blocks";
-import { withKnobs, select, boolean } from "@storybook/addon-knobs";
-import { variations, sizes, colors } from "./shared/buttons";
-import { Button, Box } from "@blend-ui/core";
+import {
+  withKnobs,
+  select,
+  boolean,
+  text,
+  number,
+} from "@storybook/addon-knobs";
+import { Button, colors } from "demo-blend-ui/core";
+import { BlendIcon, eyeIcon } from "@blend-ui/icons";
 
 <Meta
-  title="Button"
+  title="Core/Button"
   component={Button}
-  parameters={{ options: { showPanel: true } }}
+  parameters={{
+    options: { showPanel: true },
+    decorators: [withKnobs],
+  }}
 />
+
+export const Template = (args) => <Button {...args}>Default</Button>;
 
 # Button
 
 <Preview withToolbar>
-  <Story name="Standard">
-    <Button variation={"fill"} size={"md"} color={"primary"}>
-      BUTTON
-    </Button>
-  </Story>
+  <Story name="Default">{Template.bind({})}</Story>
 </Preview>
 
 <Props of={Button} />
 
+<Preview withToolbar>
+  <Story name="Outline">
+    {(args) => (
+      <Button {...args} variation={"outline"}>
+        Outline
+      </Button>
+    )}
+  </Story>
+</Preview>
+
+<Preview withToolbar>
+  <Story name="Disabled">
+    <Button disabled>Disabled</Button>
+  </Story>
+</Preview>
+
+<Preview withToolbar>
+  <Story name="Button Link">
+    <Button variation={"link"}>Something</Button>
+  </Story>
+</Preview>
+
+<Preview withToolbar>
+  <Story name="Disabled Button Link">
+    <Button disabled variation={"link"}>
+      Something
+    </Button>
+  </Story>
+</Preview>
+
 ### Variations
 
-<Story name="Button Variations">
-  <Button variation={"fill"} size={"sm"} color={"primary"}>
-    BUTTON
-  </Button>
-  <Button variation={"outline"} size={"lg"} color={"primary"}>
-    BUTTON
-  </Button>
-  <Button variation={"link"} size={"lg"} color={"primary"}>
-    BUTTON
-  </Button>
+<Story name="Size Variations">
+  <div
+    style={{
+      height: 100,
+      width: 600,
+      flexDirection: "row",
+      justifyContent: "space-between",
+    }}
+  >
+    <Button size="lg">Large</Button>
+    <Button size="md">Medium</Button>
+    <Button size="sm">Small</Button>
+    <Button size="xs">Extra small</Button>
+  </div>
+</Story>
+
+<Story name="State Variations">
+  <div
+    style={{
+      height: 100,
+      width: 600,
+      flexDirection: "row",
+      justifyContent: "space-between",
+    }}
+  >
+    <Button>Default</Button>
+    <Button
+      style={{ backgroundColor: colors.baseHover, border: colors.baseHover }}
+    >
+      Hover
+    </Button>
+    <Button disabled>Disabled</Button>
+  </div>
+</Story>
+
+<Story name="Style Variations">
+  <div
+    style={{
+      height: 100,
+      width: 60,
+      flexDirection: "row",
+      justifyContent: "space-between",
+    }}
+  >
+    <Button variation={"fill"}>Fill</Button>
+    <Button variation={"outline"}>Outline</Button>
+    <Button variation={"link"}>Link</Button>
+    <Button variation={"file"}>File</Button>
+  </div>
+</Story>
+
+<Story name="Color Variations">
+  <div>
+    <Button variation={"fill"} colorStyle={"secondary"}>
+      Default
+    </Button>
+    <Button variation={"fill"} colorStyle={"error"}>
+      Default
+    </Button>
+    <Button variation={"outline"} colorStyle={"secondary"}>
+      Outline
+    </Button>
+    <Button variation={"outline"} colorStyle={"error"}>
+      Outline
+    </Button>
+  </div>
 </Story>
 
 ### Playground
@@ -40,13 +133,5 @@ import { Button, Box } from "@blend-ui/core";
 Experiment with this story with Knobs addon in Canvas mode.
 
 <Story name="Button Knobs" parameters={{ decorators: [withKnobs] }}>
-  <Button
-    <!-- fullWidth={boolean("Full Width?", false)} -->
-    disabled={boolean("Disabled?", false)}
-    variation={select("Variation", variations, "fill")}
-    size={select("Size", sizes, "md")}
-    color={select("Color", colors, "primary")}
-  >
-    Button
-  </Button>
+  <Button />
 </Story>

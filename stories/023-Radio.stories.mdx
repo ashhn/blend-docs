@@ -1,0 +1,58 @@
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
+import { Radio } from "demo-blend-ui/core";
+import {
+  SpaceArgType,
+  LayoutArgType,
+  ColorArgType,
+  BorderArgType,
+} from "./shared/styledProps";
+import { ColorStylesArgType } from "./shared/themeProps";
+
+import { checkAction, RadioStateful } from "./shared/radio";
+
+export const boxArgTypes = {
+  ...ColorStylesArgType,
+  ...SpaceArgType,
+  ...LayoutArgType,
+};
+console.log("AGRS ", boxArgTypes);
+
+<Meta title="Core/Radio" component={Radio} />
+
+# Link
+
+A low-level layout component for setting width, margin, padding, and color
+
+<Canvas withToolbar>
+  <Story name="Default">
+    {(args) => (
+      <div>
+        <Radio
+          {...args}
+          checked
+          value="TABLE"
+          fontSize="14px"
+          onClick={checkAction}
+        >
+          selected
+        </Radio>
+        <Radio value="OBJECT" fontSize="14px" onClick={checkAction}>
+          not selected
+        </Radio>
+        <Radio disabled value="ENUM" fontSize="14px" onClick={checkAction}>
+          disabled
+        </Radio>
+      </div>
+    )}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Default" />
+
+<Story name="Radio State">
+  {(args) => <RadioStateful {...args}>Press Me!</RadioStateful>}
+</Story>
+
+## **Resources**
+
+- [Styled-system API](https://styled-system.com/api)

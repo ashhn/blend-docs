@@ -1,5 +1,10 @@
 export const variations = { outline: "outline", fill: "fill", link: "link" };
-export const sizes = { small: "small", medium: "medium", large: "large" };
+export const sizes = {
+  extraSmall: "xs",
+  small: "sm",
+  medium: "md",
+  large: "lg",
+};
 export const colors = {
   primary: "primary",
   secondary: "secondary",

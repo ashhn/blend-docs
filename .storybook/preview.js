@@ -2,7 +2,7 @@ import React from "react";
 import { addDecorator } from "@storybook/react";
 import { createGlobalStyle } from "styled-components";
 
-import { baseStyles, ThemeProvider } from "@blend-ui/core";
+import { baseStyles, ThemeProvider } from "demo-blend-ui/core";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -17,7 +17,7 @@ const themeProviderDecorator = (story) => {
   return (
     <ThemeProvider>
       <GlobalStyle />
-      {story()}
+      <div style={{ margin: "3em" }}>{story()}</div>
     </ThemeProvider>
   );
 };

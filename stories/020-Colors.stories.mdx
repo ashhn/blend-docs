@@ -1,0 +1,45 @@
+import {
+  Meta,
+  ColorPalette,
+  ColorItem,
+  Story,
+  Canvas,
+} from "@storybook/addon-docs/blocks";
+import { Colors } from "./shared/colors";
+
+import {
+  Grid,
+  Cell,
+  Text,
+  Box,
+  ThemeProvider,
+  colors,
+  theme,
+  createTheme,
+} from "demo-blend-ui/core";
+
+<Meta title="Colors" component={Colors} />
+
+<Canvas withToolbar>
+  <Story name="Base">
+    <Palette />
+  </Story>
+</Canvas>
+
+# Colors
+
+The design system includes a color palette of several primary colors, along with light and dark variations.
+
+<Colors />
+
+# Palette
+
+The design system includes a palette that can be used to theme components.
+
+<Palette />
+
+# Color Style
+
+The design system includes color styles that can be used to theme components.
+
+<ColorStyles />
