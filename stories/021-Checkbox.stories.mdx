@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
+import { Meta, Story, Canvas, Props } from "@storybook/addon-docs/blocks";
 import {
   withKnobs,
   select,
@@ -12,17 +12,19 @@ import { checkedStatus } from "./shared/checkbox";
 
 <Meta title="Core/Checkbox" component={Checkbox} />
 
-# Link
-
-A low-level layout component for setting width, margin, padding, and color
+# Checkbox
 
 <Canvas withToolbar>
   <Story name="Default">
-    <Checkbox onChange={checkAction} id="checkbox" checked={checkedStatus}>
+    <Checkbox onChange={checkAction} id="checkbox" checked={!checkedStatus}>
       Unchecked by default
     </Checkbox>
   </Story>
 </Canvas>
+
+# **Props**
+
+<Props of={Checkbox} />
 
 <Canvas withToolbar>
   <Story name="Stateful">
@@ -30,15 +32,21 @@ A low-level layout component for setting width, margin, padding, and color
   </Story>
 </Canvas>
 
-<ArgsTable story="Default" />
-
 <Story name="Checkbox Knobs" parameters={{ decorators: [withKnobs] }}>
   <CheckboxStateful
     onChange={boolean("checked", true)}
     id="checkbox"
     checked={boolean("sdada", checkedStatus)}
-  />
+  >
+    Press Me!
+  </CheckboxStateful>
 </Story>
+
+<Canvas withToolbar>
+  <Story name="Checkbox Controls">
+    {(args) => <Checkbox {...args}>Check out Controls</Checkbox>}
+  </Story>
+</Canvas>
 
 ## **Resources**
 

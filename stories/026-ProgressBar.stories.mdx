@@ -1,0 +1,35 @@
+import { Meta, Story, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import {
+  withKnobs,
+  select,
+  boolean,
+  text,
+  number,
+} from "@storybook/addon-knobs";
+
+import { ProgressBar, ProgressLabel } from "@blend-ui/progress";
+
+<Meta
+  title="Progress/Progress Bar"
+  component={ProgressBar}
+  subcomponent={ProgressLabel}
+  decorators={[withKnobs]}
+/>
+
+# Avatar
+
+We can even preview multiple stories in a block. This
+gets rendered as a group, but defines individual stories
+with unique URLs and isolated snapshot tests.
+
+<Canvas>
+  <Story name="Label">
+    {(args) => (
+      <ProgressBar {...args}>
+        <ProgressLabel>Value %</ProgressLabel>
+      </ProgressBar>
+    )}
+  </Story>
+</Canvas>
+
+<Story name="No Label">{(args) => <ProgressBar {...args} />}</Story>

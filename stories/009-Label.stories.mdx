@@ -5,7 +5,7 @@ import { Space, Color, Border } from "./shared/styledSystem";
 <Meta
   title="Core/Label"
   component={Label}
-  parameters={{ options: { showPanel: false } }}
+  parameters={{ options: { showPanel: true } }}
 />
 
 # Label
@@ -13,12 +13,8 @@ import { Space, Color, Border } from "./shared/styledSystem";
 Simple styled label component that supports a number of the styled-system props.
 
 <Preview withToolbar>
-  <Story name="Default">
-    <Label m={3}>Label Component</Label>
-  </Story>
+  <Story name="Default">{(args) => <Label m={3}>Label Component</Label>}</Story>
 </Preview>
-
-# Props should be here...
 
 <Props of={Label} />
 

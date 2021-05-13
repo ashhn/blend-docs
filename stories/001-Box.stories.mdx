@@ -24,7 +24,7 @@ console.log("AGRS ", boxArgTypes);
 
 <Meta title="Core/Box" component={Box} />
 
-# Link
+# Box
 
 A low-level layout component for setting width, margin, padding, and color
 
@@ -49,33 +49,33 @@ A low-level layout component for setting width, margin, padding, and color
 
 <Preview withToolbar>
   <Story name="Colors">
-    <Box>
-      <Box p={3} color="white" bg="blue">
-        Hello
+    {(args) => (
+      <Box {...args}>
+        <Box p={3} color="white" bg="blue">
+          Hello
+        </Box>
+        <Box p={5} mt={2} color="primary">
+          Hello
+        </Box>
+        <Box p={3} mt={2} color="error">
+          Hello
+        </Box>
+        <Box p={3} mt={2} color="warning">
+          Hello
+        </Box>
       </Box>
-      <Box p={3} mt={2} color="primary">
-        Hello
-      </Box>
-      <Box p={3} mt={2} color="error">
-        Hello
-      </Box>
-      <Box p={3} mt={2} color="warning">
-        Hello
-      </Box>
-    </Box>
+    )}
   </Story>
 </Preview>
 
 <ArgsTable story="Default" />
 
-<Story name="Box Knobs" parameters={{ decorators: [withKnobs] }}>
-  <Box
-    width={[1 / 2]}
-    height={"100px"}
-    border={"1px solid"}
-    borderRadius={4}
-    bg={select("Color", "blue, red")}
-  />
+<Story name="Box Interactive">
+  {(args) => (
+    <Box size={100} border={"1px solid"} p={5} mt={6} {...args}>
+      Interactive
+    </Box>
+  )}
 </Story>
 
 ## **Resources**

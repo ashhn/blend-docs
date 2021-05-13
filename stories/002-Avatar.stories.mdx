@@ -1,4 +1,10 @@
-import { Meta, Story, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import {
+  Meta,
+  Story,
+  Canvas,
+  Props,
+  ArgTypes,
+} from "@storybook/addon-docs/blocks";
 import {
   withKnobs,
   select,
@@ -34,6 +40,13 @@ with unique URLs and isolated snapshot tests.
       />
     )}
   </Story>
+</Canvas>
+
+# **Props**
+
+<Props of={Avatar} />
+
+<Canvas>
   <Story name="Initials Avatar">
     {(args) => (
       <Avatar
@@ -45,10 +58,16 @@ with unique URLs and isolated snapshot tests.
   </Story>
 </Canvas>
 
-<Story name="Avatar Knobs" parameters={{ decorators: [withKnobs] }}>
-  <Avatar
-    width={100}
-    initials={"TA"}
-    outerCircle={boolean("Outer Circle", false)}
-  />
-</Story>
+<Canvas>
+  <Story name="Avatar Knobs" parameters={{ decorators: [withKnobs] }}>
+    <Avatar
+      width={100}
+      initials={"TA"}
+      outerCircle={boolean("Outer Circle", false)}
+    />
+  </Story>
+</Canvas>
+
+## **Resources**
+
+- [Styled-system API](https://styled-system.com/api)

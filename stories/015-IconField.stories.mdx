@@ -1,30 +1,13 @@
-import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
-import { IconField } from "demo-blend-ui/core";
+import { Meta, Story, Canvas, Props } from "@storybook/addon-docs/blocks";
+import { IconField, Box } from "demo-blend-ui/core";
 
-import {
-  bxUser,
-  bxLock,
-  onHide,
-  hidePassword,
-  eyeIcon,
-  bxHide,
-  BlendIcon,
-} from "@blend-ui/icons";
+import { BlendIcon } from "demo-blend-ui/icons";
 
-import {
-  SpaceArgType,
-  LayoutArgType,
-  ColorArgType,
-  BorderArgType,
-} from "./shared/styledProps";
-import { ColorStylesArgType } from "./shared/themeProps";
-
-export const boxArgTypes = {
-  ...ColorStylesArgType,
-  ...SpaceArgType,
-  ...LayoutArgType,
-};
-console.log("AGRS ", boxArgTypes);
+import bxUser from "@iconify/icons-bx/bx-user";
+import bxLock from "@iconify/icons-bx/bx-lock";
+import hidePassword from "@iconify/icons-mdi/keyboard-hide";
+import eyeIcon from "@iconify/icons-mdi/monitor-eye";
+import onHide from "@iconify/icons-mdi/hide";
 
 <Meta title="Core/IconField" component={IconField} />
 
@@ -33,9 +16,9 @@ console.log("AGRS ", boxArgTypes);
 A low-level layout component for setting width, margin, padding, and color
 
 <Canvas withToolbar>
-  <Story name="Default" argTypes={boxArgTypes}>
+  <Story name="Default">
     {(args) => (
-      <IconField>
+      <IconField {...args}>
         <IconField.LeftIcon
           iconify={bxUser}
           color={"componentPrimary"}
@@ -46,6 +29,10 @@ A low-level layout component for setting width, margin, padding, and color
     )}
   </Story>
 </Canvas>
+
+# **Props**
+
+<Props of={IconField} />
 
 ### Variations
 
@@ -66,8 +53,6 @@ A low-level layout component for setting width, margin, padding, and color
     </Box>
   </IconField>
 </Story>
-
-<ArgsTable story="Default" />
 
 ## **Resources**
 

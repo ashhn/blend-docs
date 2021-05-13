@@ -1,21 +1,6 @@
-import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
+import { Meta, Story, Canvas, Props } from "@storybook/addon-docs/blocks";
 import { Text } from "demo-blend-ui/core";
 import { withKnobs, select, boolean, text } from "@storybook/addon-knobs";
-
-import {
-  SpaceArgType,
-  LayoutArgType,
-  ColorArgType,
-  BorderArgType,
-} from "./shared/styledProps";
-import { ColorStylesArgType } from "./shared/themeProps";
-
-export const boxArgTypes = {
-  ...ColorStylesArgType,
-  ...SpaceArgType,
-  ...LayoutArgType,
-};
-console.log("AGRS ", boxArgTypes);
 
 <Meta title="Core/Text" component={Text} />
 
@@ -24,38 +9,89 @@ console.log("AGRS ", boxArgTypes);
 A low-level layout component for setting width, margin, padding, and color
 
 <Canvas withToolbar>
-  <Story name="Basic" argTypes={boxArgTypes}>
+  <Story name="Basic">
     {(args) => (
-      <Text bold italic m={10}>
-        Bold and Italic
+      <Text {...args} m={10}>
+        Test Bold and Italic
       </Text>
     )}
   </Story>
 </Canvas>
 
+# **Props**
+
+<Props of={Text} />
+
 ### Variations
 
-<Story name="Text Variations">
-  <Text m={10} $fontSize={"md"} textStyle={"body"}>
-    TextStyle body
-  </Text>
-  <Text bold italic m={10}>
-    Bold and Italic
-  </Text>
-  <Text fontSize={"lg"}>Font size LG</Text>
-  <Text m={10} $fontSize={"md"} textStyle={"body"} colorStyle={"error"}>
-    TextStyle body + colorStyle error
-  </Text>
-  <Text textStyle={"h6"}>TextStyle h6</Text>
-</Story>
+<Canvas>
+  <Story name="Headings">
+    <div>
+      <Text textStyle={"h1"}>Heading 1</Text>
+      <Text textStyle={"h2"}>Heading 2</Text>
+      <Text textStyle={"h3"}>Heading 3</Text>
+      <Text textStyle={"h4"}>Heading 4</Text>
+      <Text textStyle={"h5"}>Heading 5</Text>
+      <Text textStyle={"h6"}>Heading 6</Text>
+    </div>
+  </Story>
+</Canvas>
 
-<ArgsTable story="Default" />
+<Canvas>
+  <Story name="Text Sizes">
+    <div>
+      <Text fontSize="xxs">XXSmall</Text>
+      <Text fontSize="xs">XSmall</Text>
+      <Text fontSize="sm">Small</Text>
+      <Text fontSize="md">Medium</Text>
+      <Text fontSize="lg">Large</Text>
+      <Text fontSize="lgx">XLarge</Text>
+      <Text fontSize="xl">2XLarge</Text>
+      <Text fontSize="2md">3XLarge</Text>
+      <div style={{ paddingTop: 10 }}>
+        <Text fontSize="2xl">4XLarge</Text>
+      </div>
+    </div>
+  </Story>
+</Canvas>
 
-<Story name="Text Knobs" parameters={{ decorators: [withKnobs] }}>
-  <Text fontSize={select("fonts", "md")} as={select("as", "b")}>
-    dsaasd{" "}
-  </Text>
-</Story>
+<Canvas>
+  <Story name="Text Styles">
+    <div>
+      <Text textStyle={"body"}>Body</Text>
+      <Text textStyle={"lightBody"}>Light Body</Text>
+      <Text textStyle={"detail"}>Detail</Text>
+      <Text textStyle={"caption"}>Caption</Text>
+      <Text textStyle={"caption2"}>Caption 2</Text>
+    </div>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="Text Color">
+    <div>
+      <Text color="green">Green</Text>
+      <Text color="blue">Blue</Text>
+      <Text color="yellow">Yellow</Text>
+    </div>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="Error Text">
+    <Text m={10} $fontSize={"md"} textStyle={"body"} colorStyle={"error"}>
+      Error Text
+    </Text>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="Text Knobs" parameters={{ decorators: [withKnobs] }}>
+    <Text fontSize={select("fonts", "md")} as={select("as", "b")}>
+      Testable
+    </Text>
+  </Story>
+</Canvas>
 
 ## **Resources**
 

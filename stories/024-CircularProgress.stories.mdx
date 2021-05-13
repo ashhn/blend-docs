@@ -1,0 +1,48 @@
+import { Meta, Story, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import {
+  withKnobs,
+  select,
+  boolean,
+  text,
+  number,
+} from "@storybook/addon-knobs";
+
+import { CircularProgress, CircularProgressLabel } from "@blend-ui/progress";
+import { BlendIcon } from "@blend-ui/icons";
+
+import ProgressDownloadIcon from "@iconify/icons-mdi/progress-download";
+
+<Meta
+  title="Progress/CircularProgress"
+  component={CircularProgress}
+  subcomponent={CircularProgressLabel}
+  decorators={[withKnobs]}
+/>
+
+# Circular Progress
+
+We can even preview multiple stories in a block. This
+gets rendered as a group, but defines individual stories
+with unique URLs and isolated snapshot tests.
+
+<Canvas>
+  <Story name="Label">
+    {(args) => (
+      <CircularProgress {...args}>
+        <CircularProgressLabel>%</CircularProgressLabel>
+      </CircularProgress>
+    )}
+  </Story>
+</Canvas>
+
+<Story name="No Label">{(args) => <CircularProgress {...args} />}</Story>
+
+<Story name="Icon">
+  {(args) => (
+    <CircularProgress {...args}>
+      <CircularProgressLabel>
+        <BlendIcon iconify={ProgressDownloadIcon} />
+      </CircularProgressLabel>
+    </CircularProgress>
+  )}
+</Story>

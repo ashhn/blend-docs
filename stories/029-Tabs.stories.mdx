@@ -1,0 +1,49 @@
+import { Meta, Story, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import {
+  withKnobs,
+  select,
+  boolean,
+  text,
+  number,
+} from "@storybook/addon-knobs";
+
+import {
+  Tabs,
+  Tab,
+  TabList,
+  TabPanel,
+  TabPanelList,
+  activeTab,
+  tabClick,
+} from "@blend-ui/tabs";
+
+<Meta title="Tabs/Tabs" component={Tabs} decorators={[withKnobs]} />
+
+# Avatar
+
+We can even preview multiple stories in a block. This
+gets rendered as a group, but defines individual stories
+with unique URLs and isolated snapshot tests.
+
+<Canvas>
+  <Story name="Tabs">
+    {(args) => (
+      <Tabs {...args} onClick={tabClick} style={{ height: "20px" }}>
+        <TabList>
+          <Tab>Tab One</Tab>
+          <Tab test={true}>Tab Two</Tab>
+          <Tab test={true}>Tab Three</Tab>
+          <Tab test={true}>Tab Four</Tab>
+          <Tab test={true}>Tab Five</Tab>
+        </TabList>
+        <TabPanelList>
+          <TabPanel>Tab One Context</TabPanel>
+          <TabPanel>Tab Two Context</TabPanel>
+          <TabPanel>Tab Three Context</TabPanel>
+          <TabPanel>Tab Four Context</TabPanel>
+          <TabPanel>Tab Five Context</TabPanel>
+        </TabPanelList>
+      </Tabs>
+    )}
+  </Story>
+</Canvas>

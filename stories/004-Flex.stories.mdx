@@ -1,11 +1,11 @@
-import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
 import { Flex, Box } from "demo-blend-ui/core";
 import { FlexBox } from "./shared/styledSystem";
 
 <Meta
   title="Core/Flex"
   component={Flex}
-  parameters={{ options: { showPanel: false } }}
+  parameters={{ options: { showPanel: true } }}
 />
 
 # Flex
@@ -14,17 +14,17 @@ The Flexible Box Module, usually referred to as flexbox, was designed as a one-d
 
 <Preview withToolbar>
   <Story name="Basic">
-    <Flex alignItems="center">
-      <Box width={1 / 2} p={3} color="white" bg="blue">
+    {(args) => (
+      <Flex {...args} alignItems="center" color="white" bg="grey">
         Flex
-      </Box>
-      <Box width={1 / 2} p={1} color="white" bg="green">
-        Box
-      </Box>
-    </Flex>
+      </Flex>
+    )}
   </Story>
 </Preview>
 
+<Props of={Flex} />
+
 ### **Resources**
 
+- [Styled-system API](https://styled-system.com/api)
 - <FlexBox />

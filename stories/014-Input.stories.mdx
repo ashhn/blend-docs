@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
+import { Meta, Story, Canvas, Props } from "@storybook/addon-docs/blocks";
 import {
   withKnobs,
   select,
@@ -7,21 +7,6 @@ import {
   number,
 } from "@storybook/addon-knobs";
 import { Input } from "demo-blend-ui/core";
-import { accountIcon, BlendIcon } from "@blend-ui/icons";
-import {
-  SpaceArgType,
-  LayoutArgType,
-  ColorArgType,
-  BorderArgType,
-} from "./shared/styledProps";
-import { ColorStylesArgType } from "./shared/themeProps";
-
-export const boxArgTypes = {
-  ...ColorStylesArgType,
-  ...SpaceArgType,
-  ...LayoutArgType,
-};
-console.log("AGRS ", boxArgTypes);
 
 <Meta
   title="Core/Input"
@@ -29,30 +14,42 @@ console.log("AGRS ", boxArgTypes);
   parameters={{ decorators: [withKnobs] }}
 />
 
-# Box
+# Input
 
 A low-level layout component for setting width, margin, padding, and color
 
 <Canvas withToolbar>
-  <Story name="Default" argTypes={boxArgTypes}>
-    {(args) => <Input placeholder={"Enter value here"} borders={0} p={0} />}
+  <Story name="Default">
+    {(args) => (
+      <Input {...args} placeholder={"Enter value here"} borders={0} p={0} />
+    )}
   </Story>
 </Canvas>
 
+# **Props**
+
+<Props of={Input} />
+
 ### Variations
 
-<Story name="Input Variations">
-  <Input />
-  <Input placeholder={"Enter value here"} colorStyle={"error"} />
-  <Input placeholder={"Enter value here"} borders={0} p={0} />
-  <BlendIcon iconify={accountIcon} />
-</Story>
+<Canvas withToolbar>
+  <Story name="Input Variations">
+    <Input placeholder={"Default"} />
+    <Input placeholder={"Error Input"} colorStyle={"error"} />
+    <Input placeholder={"No borders"} borders={0} p={0} />
+  </Story>
+</Canvas>
 
-<ArgsTable story="Default" />
-
-<Story name="Input Knobs" parameters={{ decorators: [withKnobs] }}>
-  <Input type={select("Width", "text")} />
-</Story>
+<Canvas withToolbar>
+  <Story name="Testable" parameters={{ decorators: [withKnobs] }}>
+    {(args) => (
+      <div>
+        Test in Controls Addon
+        <Input {...args} />
+      </div>
+    )}
+  </Story>
+</Canvas>
 
 ## **Resources**
 

@@ -1,0 +1,30 @@
+import { Meta, Story, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import {
+  withKnobs,
+  select,
+  boolean,
+  text,
+  number,
+} from "@storybook/addon-knobs";
+
+import { ToastContextProvider } from "demo-blend-ui/toast";
+
+import Component2 from "./shared/toast";
+
+<Meta
+  title="Toast/Toast"
+  component={ToastContextProvider}
+  decorators={[withKnobs]}
+/>
+
+# Avatar
+
+We can even preview multiple stories in a block. This
+gets rendered as a group, but defines individual stories
+with unique URLs and isolated snapshot tests.
+
+<Canvas>
+  <Story name="Toast">
+    {(args) => <ToastContextProvider {...args}></ToastContextProvider>}
+  </Story>
+</Canvas>

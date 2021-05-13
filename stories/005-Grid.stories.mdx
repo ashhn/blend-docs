@@ -1,24 +1,15 @@
-import { Meta, Story, Props, Preview } from "@storybook/addon-docs/blocks";
+import {
+  Meta,
+  Story,
+  Props,
+  Preview,
+  ArgsTable,
+} from "@storybook/addon-docs/blocks";
 import { Space, Color, Layout, Border } from "./shared/styledSystem";
 
-import { Flex, Text } from "demo-blend-ui/core";
-import { CssGrid as Grid, CssCell as Cell } from "@blend-ui/css-grid";
+import { Grid, Cell, Flex, Text } from "demo-blend-ui/core";
 
 import { ColorStylesArgType } from "./shared/themeProps";
-
-import {
-  SpaceArgType,
-  LayoutArgType,
-  ColorArgType,
-  BorderArgType,
-} from "./shared/styledProps";
-
-export const boxArgTypes = {
-  ...ColorStylesArgType,
-  ...SpaceArgType,
-  ...LayoutArgType,
-};
-export default { title: "Grid" };
 
 <Meta
   title="Core/Grid"
@@ -30,8 +21,45 @@ export default { title: "Grid" };
 
 A low-level grid layout component for setting width, margin, padding, and color
 
-<Preview withToolbar>
+<Canvas>
   <Story name="Standard">
+    {(args) => (
+      <Grid {...args}>
+        <Cell {...args}>
+          <Flex
+            {...args}
+            p={2}
+            border={"2px solid green"}
+            borderRadius={4}
+            width="200px"
+            bg="yellow"
+          >
+            <Text>1</Text>
+          </Flex>
+        </Cell>
+        <Cell {...args}>
+          <Flex
+            {...args}
+            p={2}
+            border={"2px solid blue"}
+            borderRadius={4}
+            width="200px"
+            bg="red"
+          >
+            <Text>2</Text>
+          </Flex>
+        </Cell>
+      </Grid>
+    )}
+  </Story>
+</Canvas>
+
+<Props of={Grid} />
+
+### Variations
+
+<Canvas>
+  <Story name="Grid Variations">
     <Grid direction="column" justify="center" minHeight="100vh">
       <Cell xs={12} textAlign="center" justify="center">
         <Flex p={2} border={"2px solid"} borderRadius={4} width="200px">
@@ -39,23 +67,9 @@ A low-level grid layout component for setting width, margin, padding, and color
         </Flex>
       </Cell>
     </Grid>
+    <Grid direction={"column"}>
+      <Cell xs={3}>Cell 1</Cell>
+      <Cell xs={6}>Cell 2</Cell>
+    </Grid>
   </Story>
-</Preview>
-
-<Props of={Grid} />
-
-### Variations
-
-<Story name="Grid Variations">
-  <Grid direction="column" justify="center" minHeight="100vh">
-    <Cell xs={12} textAlign="center" justify="center">
-      <Flex p={2} border={"2px solid"} borderRadius={4} width="200px">
-        <Text>Center this</Text>
-      </Flex>
-    </Cell>
-  </Grid>
-  <Grid direction={"column"}>
-    <Cell xs={3}>Cell 1</Cell>
-    <Cell xs={6}>Cell 2</Cell>
-  </Grid>
-</Story>
+</Canvas>

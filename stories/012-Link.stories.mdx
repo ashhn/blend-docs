@@ -1,19 +1,5 @@
-import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
+import { Meta, Story, Canvas, Props } from "@storybook/addon-docs/blocks";
 import { Link } from "demo-blend-ui/core";
-import {
-  SpaceArgType,
-  LayoutArgType,
-  ColorArgType,
-  BorderArgType,
-} from "./shared/styledProps";
-import { ColorStylesArgType } from "./shared/themeProps";
-
-export const boxArgTypes = {
-  ...ColorStylesArgType,
-  ...SpaceArgType,
-  ...LayoutArgType,
-};
-console.log("AGRS ", boxArgTypes);
 
 <Meta title="Core/Link" component={Link} />
 
@@ -22,14 +8,26 @@ console.log("AGRS ", boxArgTypes);
 A low-level layout component for setting width, margin, padding, and color
 
 <Canvas withToolbar>
-  <Story name="Default" argTypes={boxArgTypes}>
+  <Story name="Default">
     {(args) => (
-      <Link href={"#"} target={"_blank"} fontSize={"20px"}>
+      <Link {...args} href={"#"} target={"_blank"} fontSize={"20px"}>
         Something
       </Link>
     )}
   </Story>
 </Canvas>
+
+# **Props**
+
+<Props of={Link} />
+
+<Story name="Interactive">
+  {(args) => (
+    <Link {...args} target={"_blank"} fontSize={"20px"}>
+      Place Location
+    </Link>
+  )}
+</Story>
 
 <ArgsTable story="Default" />
 

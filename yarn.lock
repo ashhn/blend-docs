@@ -1317,6 +1317,16 @@
   resolved "https://registry.yarnpkg.com/@base2/pretty-print-object/-/pretty-print-object-1.0.0.tgz#860ce718b0b73f4009e153541faff2cb6b85d047"
   integrity sha512-4Th98KlMHr5+JkxfcoDT//6vY8vM+iSPrLNpHhRyLx2CFYi8e2RfqPLdpbnpo0Q5lQC5hNB79yes07zb02fvCw==
 
+"@blend-ui/core@1.1.60-alpha.0":
+  version "1.1.60-alpha.0"
+  resolved "https://registry.yarnpkg.com/@blend-ui/core/-/core-1.1.60-alpha.0.tgz#3bfba288e0ac4cc9569ea99fe65228c34bdf7e32"
+  integrity sha512-2g3qPG5t8lTDyacbWUaZCGlfro7lznZ3o0rmupal5IECcmiC3Z0HJqsSuFNj2kxXat7FABNTXsFIJX/n8V1pCQ==
+  dependencies:
+    "@blend-ui/icons" "^1.1.8-alpha.0"
+    "@popperjs/core" "^2.9.2"
+    "@reach/auto-id" "^0.12.1"
+    react-popper "^2.2.5"
+
 "@blend-ui/css-grid@1.0.6-alpha.0":
   version "1.0.6-alpha.0"
   resolved "https://registry.yarnpkg.com/@blend-ui/css-grid/-/css-grid-1.0.6-alpha.0.tgz#7ca39ecf101689e1313b13718915e9b209b7e66b"
@@ -1324,7 +1334,7 @@
   dependencies:
     styled-css-grid "^1.2.1"
 
-"@blend-ui/icons@1.1.8-alpha.0":
+"@blend-ui/icons@1.1.8-alpha.0", "@blend-ui/icons@^1.1.8-alpha.0":
   version "1.1.8-alpha.0"
   resolved "https://registry.yarnpkg.com/@blend-ui/icons/-/icons-1.1.8-alpha.0.tgz#62061048bbd9e4ab5259041667b81134a769e1f5"
   integrity sha512-bPxbHK4cZPg+lrnBubZ+vfGDrsqdnGoZsz5bQZZovXRvU0hQsecHP5rgphpo6ISy6HCzk8VNdBHqkOucGpkLiQ==
@@ -1861,7 +1871,7 @@
   resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.9.1.tgz#7f554e7368c9ab679a11f4a042ca17149d70cf12"
   integrity sha512-DvJbbn3dUgMxDnJLH+RZQPnXak1h4ZVYQ7CWiFWjQwBFkVajT4rfw2PdpHLTSTwxrYfnoEXkuBiwkDm6tPMQeA==
 
-"@popperjs/core@^2.6.0":
+"@popperjs/core@^2.6.0", "@popperjs/core@^2.9.2":
   version "2.9.2"
   resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.9.2.tgz#adea7b6953cbb34651766b0548468e743c6a2353"
   integrity sha512-VZMYa7+fXHdwIq1TDhSXoVmSPEGM/aa+6Aiq3nVVJ9bXr24zScr+NlKFKC3iPljA7ho/GAZr+d2jOf5GIRC30Q==
@@ -5873,10 +5883,10 @@ delegates@^1.0.0:
   resolved "https://registry.yarnpkg.com/delegates/-/delegates-1.0.0.tgz#84c6e159b81904fdca59a0ef44cd870d31250f9a"
   integrity sha1-hMbhWbgZBP3KWaDvRM2HDTElD5o=
 
-demo-blend-ui@^0.0.8:
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/demo-blend-ui/-/demo-blend-ui-0.0.8.tgz#8a58ba55c942b307a83d5aecf0b4f6ad1fa51d34"
-  integrity sha512-LsI4a+NHWutGRev1V88iYEB547CXjEl0mzjWVS01vIUV87hUuBxcMNMtjykz2EEP3wERUx6+6uUynnrAYLbV9A==
+demo-blend-ui@^0.0.9:
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/demo-blend-ui/-/demo-blend-ui-0.0.9.tgz#a12982b884a37e90afb40cebf42a3a75df957bad"
+  integrity sha512-373QzuWRwjgMYX+P49Bi68dTlDRNeTfQ7z9ckPM+j+YgxDkc7FFtr0yqZ8R/rg+84tGn08l/0f05h9mk1qAyhg==
 
 depd@~1.1.2:
   version "1.1.2"
@@ -12186,7 +12196,7 @@ react-popper-tooltip@^3.1.1:
     "@popperjs/core" "^2.5.4"
     react-popper "^2.2.4"
 
-react-popper@^2.2.3, react-popper@^2.2.4:
+react-popper@^2.2.3, react-popper@^2.2.4, react-popper@^2.2.5:
   version "2.2.5"
   resolved "https://registry.yarnpkg.com/react-popper/-/react-popper-2.2.5.tgz#1214ef3cec86330a171671a4fbcbeeb65ee58e96"
   integrity sha512-kxGkS80eQGtLl18+uig1UIf9MKixFSyPxglsgLBxlYnyDf65BiY9B3nZSc6C9XUNDgStROB0fMQlTEz1KxGddw==
