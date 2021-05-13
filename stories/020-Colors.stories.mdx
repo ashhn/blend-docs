@@ -16,13 +16,22 @@ import {
   colors,
   theme,
   createTheme,
+  Flex,
 } from "demo-blend-ui/core";
 
 <Meta title="Colors" component={Colors} />
 
 <Canvas withToolbar>
   <Story name="Base">
-    <Palette />
+    <Box size={200} p={5} mt={6} bg={colors.brandAccent}>
+      brandAccent
+    </Box>
+    <Box size={200} p={5} mt={6} bg={colors.baseTertiary}>
+      baseTertiary
+    </Box>
+    <Box size={200} p={5} mt={6} bg={colors.baseLink}>
+      baseLink
+    </Box>
   </Story>
 </Canvas>
 

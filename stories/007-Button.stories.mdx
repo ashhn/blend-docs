@@ -13,7 +13,9 @@ import {
   number,
 } from "@storybook/addon-knobs";
 import { Button, colors } from "demo-blend-ui/core";
-import { BlendIcon, eyeIcon } from "@blend-ui/icons";
+import { BlendIcon } from "@blend-ui/icons";
+
+import eyeIcon from "@iconify/icons-bx/bx-show";
 
 <Meta
   title="Core/Button"
@@ -139,6 +141,54 @@ Experiment with this story with Controls addon in Canvas mode.
         Outline
       </Button>
     </div>
+  </Story>
+</Canvas>
+
+<Canvas withToolbar>
+  <Story name="Icon Button">
+    <Button size="xs">
+      <BlendIcon iconify={eyeIcon} size={"16"} />
+    </Button>
+  </Story>
+</Canvas>
+
+<Canvas withToolbar>
+  <Story name="Icon Left">
+    <Button
+      onChange={(e) => {
+        console.log(e);
+      }}
+    >
+      Icon Right
+      <BlendIcon iconify={eyeIcon} size="12px" />
+    </Button>
+  </Story>
+</Canvas>
+
+<Canvas withToolbar>
+  <Story name="Icon Right">
+    <Button
+      onChange={(e) => {
+        console.log(e);
+      }}
+    >
+      <BlendIcon iconify={eyeIcon} size="12px" />
+      Icon Left
+    </Button>
+  </Story>
+</Canvas>
+
+<Canvas withToolbar>
+  <Story name="Icon Right and Left">
+    <Button
+      onChange={(e) => {
+        console.log(e);
+      }}
+    >
+      <BlendIcon iconify={eyeIcon} size="12px" />
+      Left & Right
+      <BlendIcon iconify={eyeIcon} size="12px" />
+    </Button>
   </Story>
 </Canvas>
 

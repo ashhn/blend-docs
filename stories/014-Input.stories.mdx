@@ -6,7 +6,9 @@ import {
   text,
   number,
 } from "@storybook/addon-knobs";
-import { Input } from "demo-blend-ui/core";
+import { Input, Select, IconField } from "demo-blend-ui/core";
+
+import accountIcon from "@iconify/icons-mdi/account";
 
 <Meta
   title="Core/Input"
@@ -37,6 +39,97 @@ A low-level layout component for setting width, margin, padding, and color
     <Input placeholder={"Default"} />
     <Input placeholder={"Error Input"} colorStyle={"error"} />
     <Input placeholder={"No borders"} borders={0} p={0} />
+  </Story>
+</Canvas>
+
+<Canvas withToolbar>
+  <Story name="Input With Select">
+    <div style={{ width: 200 }}>
+      <IconField>
+        <IconField.LeftIcon
+          iconify={accountIcon}
+          color={"componentPrimary"}
+          size={"17"}
+        />
+        <Select
+          id="cabinClass"
+          name="cabinClass"
+          defaultValue="Premium Economy"
+          onChange={() => {}}
+        >
+          <option>+1</option>
+          <option>+2</option>
+          <option>+3</option>
+        </Select>
+        <IconField.InputField
+          id={"username"}
+          name={"username"}
+          placeholder={"Username"}
+        />
+      </IconField>
+    </div>
+  </Story>
+</Canvas>
+
+<Canvas withToolbar>
+  <Story name="Icon Right">
+    <div style={{ width: 200 }}>
+      <IconField>
+        <IconField.InputField
+          id={"username"}
+          name={"username"}
+          placeholder={"Username"}
+        />
+        <IconField.RightIcon
+          iconify={accountIcon}
+          color={"componentPrimary"}
+          size={"17"}
+        />
+      </IconField>
+    </div>
+  </Story>
+</Canvas>
+
+<Canvas withToolbar>
+  <Story name="Icon Left">
+    <div style={{ width: 200 }}>
+      <IconField>
+        <IconField.LeftIcon
+          iconify={accountIcon}
+          color={"componentPrimary"}
+          size={"17"}
+        />
+        <IconField.InputField
+          id={"username"}
+          name={"username"}
+          placeholder={"Username"}
+        />
+      </IconField>
+    </div>
+  </Story>
+</Canvas>
+
+<Canvas withToolbar>
+  <Story name="Icon L&R">
+    <div style={{ width: 200 }}>
+      <IconField>
+        <IconField.LeftIcon
+          iconify={accountIcon}
+          color={"componentPrimary"}
+          size={"17"}
+        />
+        <IconField.InputField
+          id={"username"}
+          name={"username"}
+          placeholder={"Username"}
+        />
+        <IconField.RightIcon
+          iconify={accountIcon}
+          color={"componentPrimary"}
+          size={"17"}
+        />
+      </IconField>
+    </div>
   </Story>
 </Canvas>
 

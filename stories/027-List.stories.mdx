@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas, ArgTypes } from "@storybook/addon-docs/blocks";
+import { Meta, Story, Canvas, Props } from "@storybook/addon-docs/blocks";
 import {
   withKnobs,
   select,
@@ -31,26 +31,21 @@ with unique URLs and isolated snapshot tests.
       <div>
         <List spacing={3} {...args}>
           <ListItem onClick={action("Clicked IconButton")}>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit
+            List Item One
           </ListItem>
           <ListDivider />
-          <ListItem>
-            Assumenda, quia temporibus eveniet a libero incidunt suscipit
-          </ListItem>
-          <ListItem>
-            Assumenda, quia temporibus eveniet a libero incidunt suscipit
-          </ListItem>
+          <ListItem>List Item Two</ListItem>
           <ListDivider />
           <ListItem variation={"link"} href="#">
-            Assumenda, quia temporibus eveniet a libero incidunt suscipit
+            List Item Link
           </ListItem>
           <ListDivider />
           <ListItem variation={"icon"} iconName="smileAltIcon">
-            Assumenda, quia temporibus eveniet a libero incidunt suscipit
+            List Item Icon
           </ListItem>
           <ListDivider />
           <ListItem variation={"icon"} iconify={plusCircle} iconColor="red">
-            Assumenda, quia temporibus eveniet a libero incidunt suscipit
+            List Item Icon
           </ListItem>
           <ListDivider />
           <ListItem
@@ -59,14 +54,18 @@ with unique URLs and isolated snapshot tests.
             iconColor="red"
             href="#"
           >
-            Assumenda, quia temporibus eveniet a libero incidunt suscipit
+            List Item Icon Link
           </ListItem>
           <ListDivider />
           <ListItem variation={"icon-link"} iconName="smileAltIcon" href="#">
-            Assumenda, quia temporibus eveniet a libero incidunt suscipit
+            List Item Icon Link
           </ListItem>
         </List>
       </div>
     )}
   </Story>
 </Canvas>
+
+# **Props**
+
+<Props of={List} />

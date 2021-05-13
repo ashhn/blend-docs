@@ -1525,17 +1525,17 @@
   dependencies:
     "@hapi/hoek" "^8.3.0"
 
-"@iconify/icons-bx@^1.0.3", "@iconify/icons-bx@^1.1.0":
+"@iconify/icons-bx@^1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@iconify/icons-bx/-/icons-bx-1.1.0.tgz#6ce5251aee266ad5a8ee3effab1d031281edb61e"
   integrity sha512-4TyjNcB4hO5e5pTe/M0xaW1vqK92DcK3y9n0cDx/bUaBBa/xt2K3OM6uBGVbna2yIcmDvQJGPJpd5hnXtgZrBw==
 
-"@iconify/icons-fe@^1.0.5", "@iconify/icons-fe@^1.1.0":
+"@iconify/icons-fe@^1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@iconify/icons-fe/-/icons-fe-1.1.0.tgz#51a395d5f0d6d7f4b2d38538facf451c75279454"
   integrity sha512-CnoY6x3DTFI9P22oY+qL1bcmTws1kxIxr7wqzNsdEoSawmrbDry0yRxD3ovBGJi7vGISbfFKyt4M7gaWUhybbg==
 
-"@iconify/icons-mdi@^1.0.131", "@iconify/icons-mdi@^1.1.11":
+"@iconify/icons-mdi@^1.1.11":
   version "1.1.13"
   resolved "https://registry.yarnpkg.com/@iconify/icons-mdi/-/icons-mdi-1.1.13.tgz#5cf40310f28e538ea3c155499c3d72e2d40081a7"
   integrity sha512-R3EI5eXXrdhlY+x0M4VLJSPWC7Wb252JwZbTsn+6kSXVedQlt7euWZfurI70SUKfjviuVbJqLXWZCAAREjwQoA==
