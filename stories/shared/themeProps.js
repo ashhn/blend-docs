@@ -1,6 +1,6 @@
 import React from "react";
 //import { useTheme } from "./theme/ThemeProvider";
-import { colorStyles } from "demo-blend-ui/core";
+import { colorsList } from "../shared/colors2";
 //console.log("THEME ", colorStyles);
 //console.log("THEME ", ThemeProvider);
 
@@ -11,7 +11,53 @@ export const ColorStylesArgType = {
     type: { name: "string", required: false },
     control: {
       type: "select",
-      options: Object.keys(colorStyles),
+      options: Object.keys(colorsList),
+    },
+  },
+};
+
+export const bgArgTypes = {
+  bg: {
+    name: "Background Color",
+    description: "Color style pair from theme",
+    type: { name: "string", required: false },
+    control: {
+      type: "select",
+      options: Object.keys(colorsList),
+    },
+  },
+};
+
+export const buttonColorArgTypes = {
+  colorStyle: {
+    name: "Button Color",
+    description: "Color style pair from theme",
+    type: { name: "string", required: false },
+    control: {
+      type: "select",
+      options: ["error", "secondary"],
+    },
+  },
+};
+
+export const colorArgType = {
+  bg: {
+    name: "Color",
+    description: "Color style pair from theme",
+    type: { name: "string", required: false },
+    control: {
+      type: "color",
+    },
+  },
+};
+
+export const color2ArgType = {
+  color: {
+    name: "Color",
+    description: "Color style pair from theme",
+    type: { name: "string", required: false },
+    control: {
+      type: "color",
     },
   },
 };

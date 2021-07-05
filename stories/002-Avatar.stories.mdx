@@ -14,6 +14,7 @@ import {
 } from "@storybook/addon-knobs";
 
 import { Avatar } from "demo-blend-ui/core";
+import { Badge } from "./shared/badge.js";
 
 <Meta title="Core/Avatar" component={Avatar} decorators={[withKnobs]} />
 
@@ -36,7 +37,6 @@ with unique URLs and isolated snapshot tests.
           margin: "15px",
           filter: "drop-shadow(0px 4px 8px rgba(91, 92, 91, 0.25))",
         }}
-        outerCircle
       />
     )}
   </Story>
@@ -53,18 +53,33 @@ with unique URLs and isolated snapshot tests.
         {...args}
         width={100}
         effect={{ hover: { width: 110, fontWeight: 600 } }}
+        initials="JD"
       />
     )}
   </Story>
 </Canvas>
 
 <Canvas>
-  <Story name="Avatar Knobs" parameters={{ decorators: [withKnobs] }}>
-    <Avatar
-      width={100}
-      initials={"TA"}
-      outerCircle={boolean("Outer Circle", false)}
-    />
+  <Story name="Avatar Interactive">
+    {(args) => (
+      <Avatar
+        {...args}
+        width={100}
+        effect={{ hover: { width: 110, fontWeight: 600 } }}
+        <!-- initials="JD" -->
+      />
+    )}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="Avatar Notification">
+    {(args) => (
+      <>
+        <Avatar {...args} width={24} initials="JD" />
+        <Badge>5</Badge>
+      </>
+    )}
   </Story>
 </Canvas>
 

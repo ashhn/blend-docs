@@ -9,7 +9,7 @@ import { Space, Color, Layout, Border } from "./shared/styledSystem";
 
 import { Grid, Cell, Flex, Text } from "demo-blend-ui/core";
 
-import { ColorStylesArgType } from "./shared/themeProps";
+import { bgArgTypes } from "./shared/themeProps";
 
 <Meta
   title="Core/Grid"
@@ -22,7 +22,7 @@ import { ColorStylesArgType } from "./shared/themeProps";
 A low-level grid layout component for setting width, margin, padding, and color
 
 <Canvas>
-  <Story name="Standard">
+  <Story name="Grid Interactive" argTypes={bgArgTypes}>
     {(args) => (
       <Grid {...args}>
         <Cell {...args}>

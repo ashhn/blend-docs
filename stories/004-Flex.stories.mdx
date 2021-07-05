@@ -2,6 +2,8 @@ import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
 import { Flex, Box } from "demo-blend-ui/core";
 import { FlexBox } from "./shared/styledSystem";
 
+import { colorArgType } from "./shared/themeProps";
+
 <Meta
   title="Core/Flex"
   component={Flex}
@@ -13,9 +15,14 @@ import { FlexBox } from "./shared/styledSystem";
 The Flexible Box Module, usually referred to as flexbox, was designed as a one-dimensional layout model, and as a method that could offer space distribution between items in an interface and powerful alignment capabilities.
 
 <Preview withToolbar>
-  <Story name="Basic">
+  <Story name="Basic" argTypes={colorArgType}>
     {(args) => (
-      <Flex {...args} alignItems="center" color="white" bg="grey">
+      <Flex
+        {...args}
+        alignItems="center"
+        color="black"
+        border={"1px solid black"}
+      >
         Flex
       </Flex>
     )}

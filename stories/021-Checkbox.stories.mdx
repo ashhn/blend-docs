@@ -1,4 +1,10 @@
-import { Meta, Story, Canvas, Props } from "@storybook/addon-docs/blocks";
+import {
+  Meta,
+  Story,
+  Canvas,
+  Props,
+  argTypes,
+} from "@storybook/addon-docs/blocks";
 import {
   withKnobs,
   select,
@@ -10,15 +16,24 @@ import { Checkbox } from "demo-blend-ui/core";
 import { checkAction, CheckboxStateful } from "./shared/checkbox";
 import { checkedStatus } from "./shared/checkbox";
 
+import { color2ArgType } from "./shared/themeProps";
+
 <Meta title="Core/Checkbox" component={Checkbox} />
 
 # Checkbox
 
 <Canvas withToolbar>
-  <Story name="Default">
-    <Checkbox onChange={checkAction} id="checkbox" checked={!checkedStatus}>
-      Unchecked by default
-    </Checkbox>
+  <Story name="Default" argTypes={color2ArgType}>
+    {(args) => (
+      <Checkbox
+        onChange={checkAction}
+        id="checkbox"
+        checked={!checkedStatus}
+        {...args}
+      >
+        Unchecked by default
+      </Checkbox>
+    )}
   </Story>
 </Canvas>
 
@@ -26,27 +41,9 @@ import { checkedStatus } from "./shared/checkbox";
 
 <Props of={Checkbox} />
 
-<Canvas withToolbar>
-  <Story name="Stateful">
-    <CheckboxStateful />
-  </Story>
-</Canvas>
-
-<Story name="Checkbox Knobs" parameters={{ decorators: [withKnobs] }}>
-  <CheckboxStateful
-    onChange={boolean("checked", true)}
-    id="checkbox"
-    checked={boolean("sdada", checkedStatus)}
-  >
-    Press Me!
-  </CheckboxStateful>
+<Story name="Checkbox Interactive" argTypes={color2ArgType}>
+  {(args) => <CheckboxStateful {...args}>Press Me!</CheckboxStateful>}
 </Story>
-
-<Canvas withToolbar>
-  <Story name="Checkbox Controls">
-    {(args) => <Checkbox {...args}>Check out Controls</Checkbox>}
-  </Story>
-</Canvas>
 
 ## **Resources**
 

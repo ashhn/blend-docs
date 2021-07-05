@@ -14,10 +14,15 @@ export const checkAction = (e) => {
   checkedStatus = !checkedStatus;
 };
 
-export const CheckboxStateful = ({ children }) => {
+export const CheckboxStateful = ({ children, color }) => {
   const [value, setValue] = React.useState(false);
   return (
-    <Checkbox id="checkbox" checked={value} onChange={() => setValue(!value)}>
+    <Checkbox
+      id="checkbox"
+      checked={value}
+      color={color}
+      onChange={() => setValue(!value)}
+    >
       {children}
     </Checkbox>
   );
